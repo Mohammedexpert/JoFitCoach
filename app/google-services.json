@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "18355443957",
+    "project_id": "jofitcoach-95da4",
+    "storage_bucket": "jofitcoach-95da4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:18355443957:android:84e631f56e472e4f190dbc",
+        "android_client_info": {
+          "package_name": "com.arslan6015.jofitcoach"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "18355443957-2gdf3gnt77suv5n64j9p836qq18t1a2m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKp-c0IEtJ8Wzwy4V9S5YyzRrs_djoYEA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "18355443957-2gdf3gnt77suv5n64j9p836qq18t1a2m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
