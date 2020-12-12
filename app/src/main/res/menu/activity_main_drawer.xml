@@ -6,16 +6,54 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_baseline_home_24"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:id="@+id/nav_contactUs"
+            android:icon="@drawable/ic_baseline_contact_phone_24"
+            android:title="@string/menu_contact_us" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_baseline_person_pin_24"
+            android:title="@string/menu_profile" />
+
+
+        <item
+            android:id="@+id/nav_calculateBMI"
+            android:icon="@drawable/ic_baseline_calculate_24"
+            android:title="@string/menu_calculate_bmi" />
+
+
+        <item
+            android:id="@+id/nav_videos"
+            android:icon="@drawable/ic_baseline_ondemand_video_24"
+            android:title="@string/menu_videos" />
+
+
+        <item
+            android:id="@+id/nav_services"
+            android:icon="@drawable/ic_baseline_miscellaneous_services_24"
+            android:title="@string/menu_services" />
+
+        <item
+            android:id="@+id/nav_reservation"
+            android:icon="@drawable/ic_baseline_restore_24"
+            android:title="@string/menu_reservation" />
+
+        <item
+            android:id="@+id/nav_store"
+            android:icon="@drawable/ic_baseline_shopping_cart_24"
+            android:title="@string/menu_store" />
+
+        <item
+            android:id="@+id/nav_recepies"
+            android:icon="@drawable/ic_baseline_fastfood_24"
+            android:title="@string/menu_recipes" />
+
+        <item
+            android:id="@+id/nav_foodChart"
+            android:icon="@drawable/ic_baseline_food_bank_24"
+            android:title="@string/menu_food_chart" />
 
         <item
             android:id="@+id/nav_logout"

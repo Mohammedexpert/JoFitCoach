@@ -12,14 +12,67 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.arslan6015.jofitcoach.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_contactUs"
+        android:name="com.arslan6015.jofitcoach.ui.Contactus.ContactUsFragment"
+        android:label="@string/menu_contact_us"
+        tools:layout="@layout/fragment_contact_us" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.arslan6015.jofitcoach.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_profile"
+        android:name="com.arslan6015.jofitcoach.ui.profile.ProfileFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/nav_calculateBMI"
+        android:name="com.arslan6015.jofitcoach.ui.CalculateBmi.CalculateBMIFragment"
+        android:label="@string/menu_calculate_bmi"
+        tools:layout="@layout/fragment_calculate_b_m_i" />
+
+
+
+    <fragment
+        android:id="@+id/nav_videos"
+        android:name="com.arslan6015.jofitcoach.ui.Videos.VideosFragment"
+        android:label="@string/menu_videos"
+        tools:layout="@layout/fragment_videos" />
+
+
+
+    <fragment
+        android:id="@+id/nav_services"
+        android:name="com.arslan6015.jofitcoach.ui.Services.ServicesFragment"
+        android:label="@string/menu_services"
+        tools:layout="@layout/fragment_services" />
+
+
+
+    <fragment
+        android:id="@+id/nav_reservation"
+        android:name="com.arslan6015.jofitcoach.ui.Reservation.ReservationFragment"
+        android:label="@string/menu_reservation"
+        tools:layout="@layout/fragment_reservation" />
+
+
+
+    <fragment
+        android:id="@+id/nav_store"
+        android:name="com.arslan6015.jofitcoach.ui.Store.StoreFragment"
+        android:label="@string/menu_store"
+        tools:layout="@layout/fragment_store" />
+
+
+
+    <fragment
+        android:id="@+id/nav_recepies"
+        android:name="com.arslan6015.jofitcoach.ui.Recipes.RecipesFragment"
+        android:label="@string/menu_recipes"
+        tools:layout="@layout/fragment_recipes" />
+
+
+    <fragment
+        android:id="@+id/nav_foodChart"
+        android:name="com.arslan6015.jofitcoach.ui.FoodChart.FoodChartFragment"
+        android:label="@string/menu_food_chart"
+        tools:layout="@layout/fragment_food_chart" />
 </navigation>

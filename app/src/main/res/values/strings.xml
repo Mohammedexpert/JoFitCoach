@@ -6,8 +6,8 @@
     <string name="title_activity_home">HomeActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Demo Name</string>
+    <string name="nav_header_subtitle">muhammad.arslan1080@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
@@ -15,5 +15,23 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_logout">Log Out</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu_contact_us">Contact Us</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_calculate_bmi">Calculate Bmi</string>
+    <string name="menu_videos">Videos</string>
+    <string name="menu_services">Services</string>
+    <string name="menu_reservation">Reservation</string>
+    <string name="menu_store">store</string>
+    <string name="menu_recipes">Recipes</string>
+    <string name="menu_food_chart">Food Chart</string>
+    <string name="name">John Doe</string>
+
+
+    <string name="phoneNumber"><b>+0632759338</b> <font color='#8F8E8E'>\nMobile</font></string>
+    <string name="email"><b>jo.fit.motivation@gmaioml.com</b> <font color='#8F8E8E'>\nEmail</font></string>
+    <string name="whatsapp"><b>+0632759338</b> <font color='#8F8E8E'>\nWhatsapp</font></string>
+    <string name="direction"><b>14 rue Victor Hugo, 95370, Montigny les Cormeilles</b> <font color='#8F8E8E'>\nDirection</font></string>
 
 </resources>

@@ -2,15 +2,25 @@ package com.arslan6015.jofitcoach;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
+import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -19,9 +29,16 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import java.util.Objects;
+
 public class HomeActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+    ImageView imageViewProfile;
+    TextView nameProfile,nameEmail;
+    DatabaseReference Rootref;
+    FirebaseAuth mAuth;
+    String currentUserId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,26 +46,32 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
+        Rootref = FirebaseDatabase.getInstance().getReference();
+        mAuth = FirebaseAuth.getInstance();
+        currentUserId = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
+
+        retriverUserProfileImageMain();
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                R.id.nav_home, R.id.nav_contactUs, R.id.nav_profile,
+                R.id.nav_calculateBMI, R.id.nav_videos, R.id.nav_services,
+                R.id.nav_reservation, R.id.nav_store, R.id.nav_recepies,
+                R.id.nav_foodChart)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+        View hView =  navigationView.getHeaderView(0);
+        imageViewProfile =hView.findViewById(R.id.imageViewProfile);
+        nameEmail = hView.findViewById(R.id.nameEmail);
+        nameProfile = hView.findViewById(R.id.nameProfile);
 
         navigationView.getMenu().findItem(R.id.nav_logout).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
@@ -75,4 +98,34 @@ public class HomeActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    private void retriverUserProfileImageMain() {
+        Rootref.child("UserInfo").child(currentUserId)
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if ((dataSnapshot.exists()) && (dataSnapshot.hasChild("image"))) {
+                            String Image = dataSnapshot.child("image").getValue().toString();
+                            Picasso.get().load(Image).into(imageViewProfile);
+                        }
+                        if ((dataSnapshot.exists()) && (dataSnapshot.hasChild("email"))
+                        && (dataSnapshot.hasChild("fullName"))
+                        ){
+                            String email = dataSnapshot.child("email").getValue().toString();
+                            String fullName = dataSnapshot.child("fullName").getValue().toString();
+                            Log.e("TAG","Email: "+email);
+                            Log.e("TAG","fullName: "+fullName);
+                            nameEmail.setText(email);
+                            nameProfile.setText(fullName);
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Log.e("TAG", "RetriveUserInfoError: " + error.getMessage());
+                    }
+                });
+    }
+
 }
